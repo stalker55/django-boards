@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}Django Boards{% endblock %}</title>
+    <title>{% block title %}Blog de cultura i actualitat{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/app.css' %}">
@@ -10,10 +10,9 @@
   </head>
   <body>
     {% block body %}
-
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="{% url 'home' %}">Django Boards</a>
+          <a class="navbar-brand" href="{% url 'home' %}">Tauler de cultura</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -25,17 +24,17 @@
                     {{ user.username }}
                   </a>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-                    <a class="dropdown-item" href="{% url 'my_account' %}">My account</a>
-                    <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+                    <a class="dropdown-item" href="{% url 'my_account' %}">El meu compte</a>
+                    <a class="dropdown-item" href="{% url 'password_change' %}">Canviar contrasenya</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+                    <a class="dropdown-item" href="{% url 'logout' %}">Sortir</a>
                   </div>
                 </li>
               </ul>
             {% else %}
               <form class="form-inline ml-auto">
-                <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
-                <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
+                <a href="{% url 'login' %}" class="btn btn-outline-secondary">Entrar</a>
+                <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Alta</a>
               </form>
             {% endif %}
           </div>
@@ -51,7 +50,7 @@
         {% endblock %}
       </div>
     {% endblock body %}
-    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     {% block javascript %}{% endblock %}

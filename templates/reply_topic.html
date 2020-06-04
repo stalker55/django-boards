@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}Post a reply{% endblock %}
+{% block title %}Envia una resposta{% endblock %}
 
 {% block stylesheet %}
   <link rel="stylesheet" href="{% static 'css/simplemde.min.css' %}">
@@ -27,7 +27,7 @@
   <form method="post" class="mb-4" novalidate>
     {% csrf_token %}
     {% include 'includes/form.html' %}
-    <button type="submit" class="btn btn-success">Post a reply</button>
+    <button type="submit" class="btn btn-success">Envia una resposta</button>
   </form>
 
   {% for post in topic.get_last_ten_posts %}
